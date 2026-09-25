@@ -30,16 +30,13 @@ int main() {
          }
 
         cout << "Quelle est la distance L1 ? : ";
-
-
-
      }
 
 
     const double difference_road_first_distance = abs(first_distance - road_distance);
     const double distance_stone = sqrt(pow(difference_road_first_distance, 2) + pow(distance_cube_road,2));
 
-    const double total_time = first_distance / 5 + distance_stone / 2;
+    const double total_time = first_distance / road_speed + distance_stone / stone_speed;
 
     cout << "Total time: " << total_time << " hour(s)" << endl;
 
