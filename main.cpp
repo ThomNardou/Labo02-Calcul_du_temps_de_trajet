@@ -13,13 +13,30 @@ Remarque(s) : /
 
 int main() {
     const double road_distance = 10.0, //dy
-                 first_distance = 6.0, //L1
                  distance_cube_road = 3.0, //dx
                  road_speed = 5.0,
                  stone_speed = 2.0;
 
+    double first_distance = 0.0;
 
-    const double difference_road_first_distance = road_distance - first_distance;
+    cout << "Quelle est la distance L1 ? : ";
+
+     while (!(cin >> first_distance) || first_distance < 0.0) {
+
+         if (first_distance < 0.0 || cin.fail()) {
+             cout << "Merci de rentrer un nombre !" << endl;
+             cin.clear(); // Reset input errors
+             cin.ignore(10000, '\n'); // Remove bad input
+         }
+
+        cout << "Quelle est la distance L1 ? : ";
+
+
+
+     }
+
+
+    const double difference_road_first_distance = abs(first_distance - road_distance);
     const double distance_stone = sqrt(pow(difference_road_first_distance, 2) + pow(distance_cube_road,2));
 
     const double total_time = first_distance / 5 + distance_stone / 2;
